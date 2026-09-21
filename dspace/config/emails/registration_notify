@@ -8,12 +8,12 @@
 ##
 ## See org.dspace.core.Email for information on the format of this file.
 ##
-#set($subject = "${config.get('dspace.name')}: Registration Notification")
+#set($subject = "DSpace: Повідомлення про реєстрацію")
 
-A new user has registered on ${params[0]} at ${params[1]}:
+У Репозиторії СумДУ за ${params[1]} зареєструвався новий користувач:
 
-Name:                   ${params[2]}
-Email:                  ${params[3]}
-Date:                   ${params[4]}
+ПІБ:                   ${params[2]}
+Електронна адреса:                  ${params[3]}
+Дата:                   ${params[4]}
 
-The ${config.get('dspace.name')} Team
+Бібліотека СумДУ
