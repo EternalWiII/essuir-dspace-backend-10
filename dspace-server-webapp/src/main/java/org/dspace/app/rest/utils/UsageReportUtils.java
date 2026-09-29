@@ -58,6 +58,7 @@ public class UsageReportUtils {
     public static final String TOTAL_DOWNLOADS_REPORT_ID = "TotalDownloads";
     public static final String TOP_COUNTRIES_REPORT_ID = "TopCountries";
     public static final String TOP_CITIES_REPORT_ID = "TopCities";
+    public static final String TOP_ITEMS_REPORT_ID = "TopItems";
 
     /**
      * Get list of usage reports that are applicable to the DSO (of given UUID)
@@ -71,8 +72,12 @@ public class UsageReportUtils {
         List<UsageReportRest> usageReports = new ArrayList<>();
         if (dso instanceof Site) {
             UsageReportRest globalUsageStats = this.resolveGlobalUsageReport(context);
-            globalUsageStats.setId(dso.getID().toString() + "_" + TOTAL_VISITS_REPORT_ID);
+            globalUsageStats.setId(dso.getID().toString() + "_" + TOP_ITEMS_REPORT_ID);
             usageReports.add(globalUsageStats);
+            usageReports.add(this.createUsageReport(context, dso, TOTAL_VISITS_REPORT_ID));
+            usageReports.add(this.createUsageReport(context, dso, TOTAL_VISITS_PER_MONTH_REPORT_ID));
+            usageReports.add(this.createUsageReport(context, dso, TOP_COUNTRIES_REPORT_ID));
+            usageReports.add(this.createUsageReport(context, dso, TOP_CITIES_REPORT_ID));
         } else {
             usageReports.add(this.createUsageReport(context, dso, TOTAL_VISITS_REPORT_ID));
             usageReports.add(this.createUsageReport(context, dso, TOTAL_VISITS_PER_MONTH_REPORT_ID));
@@ -118,6 +123,14 @@ public class UsageReportUtils {
                 case TOP_CITIES_REPORT_ID:
                     usageReportRest = resolveTopCities(context, dso);
                     usageReportRest.setReportType(TOP_CITIES_REPORT_ID);
+                    break;
+                case TOP_ITEMS_REPORT_ID:
+                    if (dso instanceof Site) {
+                        usageReportRest = resolveGlobalUsageReport(context);
+                        usageReportRest.setReportType(TOP_ITEMS_REPORT_ID);
+                    } else {
+                        throw new IllegalArgumentException("TopItems report only available for Site");
+                    }
                     break;
                 default:
                     throw new ResourceNotFoundException("The given report id can't be resolved: " + reportId + "; " +
@@ -167,7 +180,7 @@ public class UsageReportUtils {
                 }
             }
         }
-        usageReportRest.setReportType(TOTAL_VISITS_REPORT_ID);
+        usageReportRest.setReportType(TOP_ITEMS_REPORT_ID);
         return usageReportRest;
     }
 
