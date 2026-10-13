@@ -270,6 +270,13 @@
                 <!-- <ref bean="searchFilterHasGeospatialMetadata"/> -->
                 <ref bean="searchFilterEntityType"/>
                 <ref bean="searchFilterAccessStatus" />
+                <ref bean="searchFilterLanguage"/>
+                <ref bean="searchFilterSpeciality"/>
+                <ref bean="searchFilterSICI"/>
+                <ref bean="searchFilterDOI"/>
+                <ref bean="searchFilterRights"/>
+                <ref bean="searchFilterOpenEducationalResources"/>
+                <ref bean="searchFilterType"/>
             </list>
         </property>
         <!-- Set TagCloud configuration per discovery configuration -->
@@ -281,6 +288,13 @@
                 <ref bean="searchFilterAuthor" />
                 <ref bean="searchFilterSubject" />
                 <ref bean="searchFilterIssued" />
+                <ref bean="searchFilterLanguage"/>
+                <ref bean="searchFilterSpeciality"/>
+                <ref bean="searchFilterSICI"/>
+                <ref bean="searchFilterDOI"/>
+                <ref bean="searchFilterRights"/>
+                <ref bean="searchFilterOpenEducationalResources"/>
+                <ref bean="searchFilterType"/>
                 <ref bean="searchFilterContentInOriginalBundle"/>
                 <ref bean="searchFilterFileNameInOriginalBundle" />
                 <ref bean="searchFilterFileDescriptionInOriginalBundle" />
@@ -293,6 +307,7 @@
                 <ref bean="searchFilterIsPublicationOfJournalIssueRelation"/>
                 <ref bean="searchFilterIsJournalOfPublicationRelation"/>
                 <ref bean="searchFilterGeospatialPoint"/>
+
             </list>
         </property>
         <!--The sort filters for the discovery search-->
@@ -455,6 +470,13 @@
                 <ref bean="searchFilterIssued" />
                 <ref bean="searchFilterContentInOriginalBundle"/>
                 <ref bean="searchFilterEntityType"/>
+                <ref bean="searchFilterLanguage"/>
+                <ref bean="searchFilterSpeciality"/>
+                <ref bean= "searchFilterSICI"/>
+                <ref bean= "searchFilterDOI"/>
+                <ref bean="searchFilterRights"/>
+                <ref bean= "searchFilterOpenEducationalResources"/>
+                <ref bean="searchFilterType"/>
             </list>
         </property>
         <!-- Set TagCloud configuration per discovery configuration -->
@@ -475,6 +497,13 @@
                 <ref bean="searchFilterIsOrgUnitOfPublicationRelation"/>
                 <ref bean="searchFilterIsPublicationOfJournalIssueRelation"/>
                 <ref bean="searchFilterIsJournalOfPublicationRelation"/>
+                <ref bean="searchFilterLanguage"/>
+                <ref bean="searchFilterSpeciality"/>
+                <ref bean="searchFilterSICI"/>
+                <ref bean="searchFilterDOI"/>
+                <ref bean="searchFilterRights"/>
+                <ref bean="searchFilterOpenEducationalResources"/>
+                <ref bean="searchFilterType"/>
             </list>
         </property>
         <!--The sort filters for the discovery search-->
@@ -594,6 +623,13 @@
                 <ref bean="searchFilterIssued" />
                 <ref bean="searchFilterContentInOriginalBundle"/>
                 <ref bean="searchFilterEntityType"/>
+                <ref bean="searchFilterLanguage"/>
+                <ref bean="searchFilterSpeciality"/>
+                <ref bean="searchFilterSICI"/>
+                <ref bean="searchFilterDOI"/>
+                <ref bean="searchFilterRights"/>
+                <ref bean="searchFilterOpenEducationalResources"/>
+                <ref bean="searchFilterType"/>
             </list>
         </property>
         <!-- Set TagCloud configuration per discovery configuration -->
@@ -614,6 +650,13 @@
                 <ref bean="searchFilterIsOrgUnitOfPublicationRelation"/>
                 <ref bean="searchFilterIsPublicationOfJournalIssueRelation"/>
                 <ref bean="searchFilterIsJournalOfPublicationRelation"/>
+                <ref bean="searchFilterLanguage"/>
+                <ref bean="searchFilterSpeciality"/>
+                <ref bean="searchFilterSICI"/>
+                <ref bean="searchFilterDOI"/>
+                <ref bean="searchFilterRights"/>
+                <ref bean="searchFilterOpenEducationalResources"/>
+                <ref bean="searchFilterType"/>
             </list>
         </property>
         <!--The sort filters for the discovery search-->
@@ -763,6 +806,13 @@
                 <ref bean="searchFilterNotifyRelation" />
                 <ref bean="searchFilterNotifyEndorsement" />
                 <ref bean="searchFilterNotifyReview" />
+                <ref bean="searchFilterLanguage"/>
+                <ref bean="searchFilterSpeciality"/>
+                <ref bean="searchFilterSICI"/>
+                <ref bean="searchFilterDOI"/>
+                <ref bean="searchFilterRights"/>
+                <ref bean="searchFilterOpenEducationalResources"/>
+                <ref bean="searchFilterType"/>
             </list>
         </property>
         <!--The sort filters for the discovery search-->
@@ -1544,6 +1594,13 @@
                 <ref bean="searchFilterIssued" />
                 <ref bean="searchFilterContentInOriginalBundle"/>
                 <ref bean="searchFilterEntityType"/>
+                <ref bean="searchFilterLanguage"/>
+                <ref bean="searchFilterSpeciality"/>
+                <ref bean="searchFilterSICI"/>
+                <ref bean="searchFilterDOI"/>
+                <ref bean="searchFilterRights"/>
+                <ref bean="searchFilterOpenEducationalResources"/>
+                <ref bean="searchFilterType"/>
             </list>
         </property>
         <!-- Set TagCloud configuration per discovery configuration -->
@@ -1565,6 +1622,13 @@
                 <ref bean="searchFilterIsPublicationOfJournalIssueRelation"/>
                 <ref bean="searchFilterIsJournalOfPublicationRelation"/>
                 <ref bean="searchFilterIsDatasetOfPublicationRelation"/>
+                <ref bean="searchFilterLanguage"/>
+                <ref bean="searchFilterSpeciality"/>
+                <ref bean="searchFilterSICI"/>
+                <ref bean="searchFilterDOI"/>
+                <ref bean="searchFilterRights"/>
+                <ref bean="searchFilterOpenEducationalResources"/>
+                <ref bean="searchFilterType"/>
             </list>
         </property>
         <!--The sort filters for the discovery search-->
@@ -1615,6 +1679,13 @@
                 <ref bean="searchFilterIssued" />
                 <ref bean="searchFilterContentInOriginalBundle"/>
                 <ref bean="searchFilterEntityType"/>
+                <ref bean="searchFilterLanguage"/>
+                <ref bean="searchFilterSpeciality"/>
+                <ref bean="searchFilterSICI"/>
+                <ref bean="searchFilterDOI"/>
+                <ref bean="searchFilterRights"/>
+                <ref bean="searchFilterOpenEducationalResources"/>
+                <ref bean="searchFilterType"/>
             </list>
         </property>
         <!-- Set TagCloud configuration per discovery configuration -->
@@ -1636,6 +1707,13 @@
                 <ref bean="searchFilterIsPublicationOfJournalIssueRelation"/>
                 <ref bean="searchFilterIsJournalOfPublicationRelation"/>
                 <ref bean="searchFilterIsDatasetOfPublicationRelation"/>
+                <ref bean="searchFilterLanguage"/>
+                <ref bean="searchFilterSpeciality"/>
+                <ref bean="searchFilterSICI"/>
+                <ref bean="searchFilterDOI"/>
+                <ref bean="searchFilterRights"/>
+                <ref bean="searchFilterOpenEducationalResources"/>
+                <ref bean="searchFilterType"/>
             </list>
         </property>
         <!--The sort filters for the discovery search-->
@@ -4182,6 +4260,97 @@
         <property name="metadataField" value="dc.date.issued"/>
         <property name="type" value="date"/>
         <property name="defaultSortOrder" value="desc"/>
+    </bean>
+
+    <bean id="searchFilterOpenEducationalResources" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+        <property name="indexFieldName" value="oer"/>
+        <property name="metadataFields">
+            <list>
+                <value>dc.resources.openeducational</value>
+            </list>
+        </property>
+        <property name="facetLimit" value="5"/>
+        <property name="sortOrderSidebar" value="COUNT"/>
+        <property name="sortOrderFilterPage" value="COUNT"/>
+        <property name="isOpenByDefault" value="false"/>
+        <property name="pageSize" value="10"/>
+        <property name="exposeMinAndMaxValue" value="true"/>
+    </bean>
+
+        <bean id="searchFilterLanguage" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+    <property name="indexFieldName" value="language"/>
+    <property name="metadataFields">
+        <list>
+            <value>dc.language.iso</value>
+        </list>
+    </property>
+    <property name="facetLimit" value="5"/>
+    <property name="sortOrderSidebar" value="COUNT"/>
+    <property name="sortOrderFilterPage" value="COUNT"/>
+    <property name="isOpenByDefault" value="false"/>
+    <property name="pageSize" value="10"/>
+    <property name="exposeMinAndMaxValue" value="true"/>
+    </bean>
+
+    <bean id="searchFilterSpeciality" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+        <property name="indexFieldName" value="speciality"/>
+        <property name="metadataFields">
+            <list>
+                <value>dc.speciality.name</value>
+            </list>
+        </property>
+        <property name="facetLimit" value="5"/>
+        <property name="sortOrderSidebar" value="COUNT"/>
+        <property name="sortOrderFilterPage" value="COUNT"/>
+        <property name="isOpenByDefault" value="false"/>
+        <property name="pageSize" value="10"/>
+        <property name="exposeMinAndMaxValue" value="true"/>
+    </bean>
+
+    <bean id="searchFilterDOI" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+        <property name="indexFieldName" value="doi"/>
+        <property name="metadataFields">
+            <list>
+                <value>dc.identifier.doi</value>
+            </list>
+        </property>
+        <property name="facetLimit" value="5"/>
+        <property name="sortOrderSidebar" value="COUNT"/>
+        <property name="sortOrderFilterPage" value="COUNT"/>
+        <property name="isOpenByDefault" value="false"/>
+        <property name="pageSize" value="10"/>
+        <property name="exposeMinAndMaxValue" value="true"/>
+    </bean>
+
+    <bean id="searchFilterSICI" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+        <property name="indexFieldName" value="identifier"/>
+        <property name="metadataFields">
+            <list>
+                <value>dc.identifier.sici</value>
+            </list>
+        </property>
+        <property name="facetLimit" value="5"/>
+        <property name="sortOrderSidebar" value="COUNT"/>
+        <property name="sortOrderFilterPage" value="COUNT"/>
+        <property name="isOpenByDefault" value="false"/>
+        <property name="pageSize" value="10"/>
+        <property name="exposeMinAndMaxValue" value="true"/>
+    </bean>
+
+
+    <bean id="searchFilterRights" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+        <property name="indexFieldName" value="rights"/>
+        <property name="metadataFields">
+            <list>
+                <value>dc.rights.uri</value>
+            </list>
+        </property>
+        <property name="facetLimit" value="5"/>
+        <property name="sortOrderSidebar" value="COUNT"/>
+        <property name="sortOrderFilterPage" value="COUNT"/>
+        <property name="isOpenByDefault" value="false"/>
+        <property name="pageSize" value="10"/>
+        <property name="exposeMinAndMaxValue" value="true"/>
     </bean>
 
 </beans>
