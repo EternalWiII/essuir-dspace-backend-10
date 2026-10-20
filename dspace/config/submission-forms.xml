@@ -39,48 +39,11 @@
                 <field>
                     <dc-schema>dc</dc-schema>
                     <dc-element>description</dc-element>
-                    <repeatable>false</repeatable>
+                    <repeatable>true</repeatable>
                     <label>Description</label>
                     <input-type>textarea</input-type>
                     <hint>Enter a description for the file</hint>
-                    <required></required>
-                </field>
-            </row>
-            <row>
-                <field>
-                    <dc-schema>dc</dc-schema>
-                    <dc-element>type</dc-element>
-                    <repeatable>false</repeatable>
-                    <label>Audio or Video media type</label>
-                    <input-type value-pairs-name="audio_video_media_type">dropdown</input-type>
-                    <hint>Select Audio or Video media type</hint>
-                    <required></required>
-                </field>
-            </row>
-            <row>
-                <field>
-                    <dc-schema>dspace</dc-schema>
-                    <dc-element>bitstream</dc-element>
-                    <dc-qualifier>transcript</dc-qualifier>
-                    <repeatable>false</repeatable>
-                    <label>Audio Transcription</label>
-                    <input-type>textarea</input-type>
-                    <hint>Enter a transcription for the file</hint>
-                    <type-bind>audio,audio+video</type-bind>
-                    <required></required>
-                </field>
-            </row>
-            <row>
-                <field>
-                    <dc-schema>dspace</dc-schema>
-                    <dc-element>bitstream</dc-element>
-                    <dc-qualifier>textalternative</dc-qualifier>
-                    <repeatable>false</repeatable>
-                    <label>Text alternative</label>
-                    <input-type>textarea</input-type>
-                    <hint>Enter a text alternative or video description for the file</hint>
-                    <type-bind>video,audio+video</type-bind>
-                    <required></required>
+                    <required>Please, you should enter a description for the file</required>
                 </field>
             </row>
         </form>
@@ -97,7 +60,6 @@
                     <label>Author</label>
                     <input-type>onebox</input-type>
                     <hint>Enter the author's name (Family name, Given names).</hint>
-                    <required></required>
                 </field>
             </row>
             <row>
@@ -121,7 +83,6 @@
                     <label>Other Titles</label>
                     <input-type>onebox</input-type>
                     <hint>If the item has any alternative titles, please enter them here.</hint>
-                    <required></required>
                 </field>
             </row>
             <row>
@@ -131,7 +92,7 @@
                     <dc-qualifier>issued</dc-qualifier>
                     <repeatable>false</repeatable>
                     <label>Date of Issue</label>
-                    <style>col-md-4</style>
+                    <style>col-sm-4</style>
                     <input-type>date</input-type>
                     <hint>Please give the date of previous publication or public distribution.
                         You can leave out the day and/or month if they aren't applicable.
@@ -145,10 +106,9 @@
                     <dc-qualifier></dc-qualifier>
                     <repeatable>false</repeatable>
                     <label>Publisher</label>
-                    <style>col-md-8</style>
+                    <style>col-sm-8</style>
                     <input-type>onebox</input-type>
                     <hint>Enter the name of the publisher of the previously issued instance of this item.</hint>
-                    <required></required>
                 </field>
             </row>
             <row>
@@ -160,7 +120,17 @@
                     <label>Citation</label>
                     <input-type>onebox</input-type>
                     <hint>Enter the standard citation for the previously issued instance of this item.</hint>
-                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>resources</dc-element>
+                    <dc-qualifier>openeducational</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Open Educational Resources</label>
+                    <input-type value-pairs-name="educational_resources">dropdown</input-type>
+                    <hint></hint>
                 </field>
             </row>
             <row>
@@ -172,7 +142,6 @@
                     <label>Series/Report No.</label>
                     <input-type>series</input-type>
                     <hint>Enter the series and number assigned to this item by your community.</hint>
-                    <required></required>
                 </field>
             </row>
             <row>
@@ -187,7 +156,6 @@
                     <hint>If the item has any identification numbers or codes associated with
                         it, please enter the types and the actual numbers or codes.
                     </hint>
-                    <required></required>
                 </field>
             </row>
             <row>
@@ -195,7 +163,7 @@
                     <dc-schema>dc</dc-schema>
                     <dc-element>type</dc-element>
                     <dc-qualifier></dc-qualifier>
-                    <repeatable>true</repeatable>
+                    <repeatable>false</repeatable>
                     <label>Type</label>
                     <input-type value-pairs-name="common_types">dropdown</input-type>
                     <hint>Select the type of content of the item.
@@ -203,19 +171,79 @@
                     <required>You must choose at least one type.</required>
                 </field>
             </row>
+
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>speciality</dc-element>
+                    <dc-qualifier>name</dc-qualifier>
+                    <label>Specialty</label>
+                    <input-type value-pairs-name="specializations">dropdown</input-type>
+                    <hint>Select the specialty</hint>
+                    <type-bind>Bachelous paper, Masters thesis</type-bind>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>educational</dc-element>
+                    <dc-qualifier>program</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Educational Program</label>
+                    <input-type value-pairs-name="educational_program">dropdown</input-type>
+                    <type-bind>Bachelous paper, Masters thesis</type-bind>
+                    <hint></hint>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>date</dc-element>
+                    <dc-qualifier>defended</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Дата захисту / Date of Defense</label>
+                    <input-type>date</input-type>
+                    <hint>Введіть дату захисту. Можна не вказувати день або місяць.</hint>
+                    <required>Потрібно вказати щонайменше рік.</required>
+                    <type-bind>Bachelous paper, Masters thesis</type-bind>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>contributor</dc-element>
+                    <dc-qualifier>scientificdirector</dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Scientific Director</label>
+                    <input-type>onebox</input-type>
+                    <hint>Enter the full name of the scientific director</hint>
+                    <type-bind>Bachelous paper, Masters thesis, Thesis, Theses</type-bind>
+                </field>
+            </row>
             <row>
                 <field>
                     <dc-schema>dc</dc-schema>
                     <dc-element>language</dc-element>
                     <dc-qualifier>iso</dc-qualifier>
-                    <repeatable>false</repeatable>
+                    <repeatable>true</repeatable>
                     <label>Language</label>
                     <input-type value-pairs-name="common_iso_languages">dropdown</input-type>
                     <hint>Select the language of the main content of the item. If the language does not appear in the
                         list, please select 'Other'. If the content does not really have a language (for example, if it
                         is a dataset or an image) please select 'N/A'.
                     </hint>
-                    <required></required>
+                    <required>You must select the language of the main content of the item.</required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>rights</dc-element>
+                    <dc-qualifier>uri</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Rights URI</label>
+                    <input-type value-pairs-name="rights_links_localization">dropdown</input-type>
+                    <required>You must choose rights of this item.</required>
                 </field>
             </row>
         </form>
@@ -231,10 +259,9 @@
                     <!-- An input-type of tag MUST be marked as repeatable -->
                     <repeatable>true</repeatable>
                     <label>Subject Keywords</label>
-                    <input-type>tag</input-type>
+                    <input-type>onebox</input-type>
                     <hint>Enter appropriate subject keywords or phrases.</hint>
                     <required></required>
-                    <vocabulary>srsc</vocabulary>
                 </field>
             </row>
             <row>
@@ -245,7 +272,6 @@
                     <repeatable>false</repeatable>
                     <label>Abstract</label>
                     <input-type>textarea</input-type>
-                    <hint>Enter the abstract of the item.</hint>
                     <required></required>
                 </field>
             </row>
@@ -302,29 +328,6 @@
                     <!--<regex>\w+(,)+\w+</regex>-->
                 </relation-field>
             </row>
-            <!--
-                Uncomment the following definition to enable entry of
-                editors on the publication submission form
-            -->
-            <!--
-            <row>
-                <relation-field>
-                    <relationship-type>isEditorOfPublication</relationship-type>
-                    <search-configuration>person</search-configuration>
-                    <repeatable>true</repeatable>
-                    <label>Editor</label>
-                    <hint>Enter the editor's name (Family name, Given names).</hint>
-                    <linked-metadata-field>
-                        <dc-schema>dc</dc-schema>
-                        <dc-element>contributor</dc-element>
-                        <dc-qualifier>editor</dc-qualifier>
-                        <input-type>onebox</input-type>
-                    </linked-metadata-field>
-                    <externalsources>orcid</externalsources>
-                    <required></required>
-                </relation-field>
-              </row>
-              -->
             <row>
                 <field>
                     <dc-schema>dc</dc-schema>
@@ -356,7 +359,7 @@
                     <dc-qualifier>issued</dc-qualifier>
                     <repeatable>false</repeatable>
                     <label>Date of Issue</label>
-                    <style>col-md-4</style>
+                    <style>col-sm-4</style>
                     <input-type>date</input-type>
                     <hint>Please give the date of previous publication or public distribution.
                         You can leave out the day and/or month if they aren't applicable.
@@ -370,7 +373,7 @@
                     <dc-qualifier></dc-qualifier>
                     <repeatable>false</repeatable>
                     <label>Publisher</label>
-                    <style>col-md-8</style>
+                    <style>col-sm-8</style>
                     <input-type>onebox</input-type>
                     <hint>Enter the name of the publisher of the previously issued instance of this item.</hint>
                     <required></required>
@@ -399,21 +402,6 @@
                     <hint>Enter the series and number assigned to this item by your community.</hint>
                     <required></required>
                 </field>
-            </row>
-            <row>
-                <relation-field>
-                    <relationship-type>isDatasetOfPublication</relationship-type>
-                    <search-configuration>dataset</search-configuration>
-                    <repeatable>true</repeatable>
-                    <label>Research Data</label>
-                    <hint>Enter the datasets this publication is based on.</hint>
-                    <linked-metadata-field>
-                        <dc-schema>dc</dc-schema>
-                        <dc-element>relation</dc-element>
-                        <dc-qualifier>isBasedOn</dc-qualifier>
-                        <input-type>onebox</input-type>
-                    </linked-metadata-field>
-                </relation-field>
             </row>
             <row>
                 <field>
@@ -535,6 +523,93 @@
                     <label>Job title</label>
                     <input-type>onebox</input-type>
                     <hint>Enter the job title of the person</hint>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>profile</dc-element>
+                    <dc-qualifier>officialname</dc-qualifier>
+                    <label>Official Name</label>
+                    <input-type>onebox</input-type>
+                    <hint>Enter the official name of the person</hint>
+                </field>
+            </row>
+
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>profile</dc-element>
+                    <dc-qualifier>translatedname</dc-qualifier>
+                    <label>Translated (Transliterated) Name</label>
+                    <input-type>onebox</input-type>
+                    <hint>Enter the translated or transliterated name</hint>
+                </field>
+            </row>
+
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>profile</dc-element>
+                    <dc-qualifier>alternativename</dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Alternative Name</label>
+                    <input-type>onebox</input-type>
+                    <hint>Enter any alternative names or pseudonyms</hint>
+                </field>
+            </row>
+
+            <row>
+                <field>
+                    <dc-schema>person</dc-schema>
+                    <dc-element>identifier</dc-element>
+                    <dc-qualifier>orcid</dc-qualifier>
+                    <label>ORCID iD</label>
+                    <input-type>onebox</input-type>
+                    <hint>Enter the ORCID iD (e.g., 0000-0002-1825-0097)</hint>
+                </field>
+            </row>
+
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>identifier</dc-element>
+                    <dc-qualifier>uri</dc-qualifier>
+                    <label>URL</label>
+                    <input-type>onebox</input-type>
+                    <hint>Enter a personal website or profile URL</hint>
+                </field>
+            </row>
+
+            <row>
+                <field>
+                    <dc-schema>person</dc-schema>
+                    <dc-element>email</dc-element>
+                    <label>Email</label>
+                    <input-type>onebox</input-type>
+                    <hint>Enter the person's email address</hint>
+                </field>
+            </row>
+
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>profile</dc-element>
+                    <dc-qualifier>affiliation</dc-qualifier>
+                    <label>Institute/Faculty/Division</label>
+                    <input-type>onebox</input-type>
+                    <hint>Enter the primary institutional affiliation</hint>
+                </field>
+            </row>
+
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>profile</dc-element>
+                    <dc-qualifier>department</dc-qualifier>
+                    <label>Department/Unit</label>
+                    <input-type>onebox</input-type>
+                    <hint>Enter the specific department or unit</hint>
                 </field>
             </row>
         </form>
@@ -794,7 +869,7 @@
                     <!--<filter>creativework.publisher:somepublishername</filter>-->
                     <label>Journal</label>
                     <hint>Select the journal related to this volume.</hint>
-                    <externalsources>opfJournal</externalsources>
+                    <externalsources>sherpaJournal</externalsources>
                 </relation-field>
             </row>
             <row>
@@ -894,116 +969,115 @@
 
         </form>
 
-        <!-- Form which defines the *first* metadata page/section for depositing Dataset Entities.-->
         <form name="datasetStep">
-            <row>
-                <relation-field>
-                    <relationship-type>isAuthorOfDataset</relationship-type>
-                    <search-configuration>person</search-configuration>
-                    <repeatable>true</repeatable>
-                    <label>Author</label>
-                    <hint>Enter the author's name (Family name, Given names).</hint>
-                    <linked-metadata-field>
-                        <dc-schema>dc</dc-schema>
-                        <dc-element>contributor</dc-element>
-                        <dc-qualifier>author</dc-qualifier>
-                        <input-type>onebox</input-type>
-                    </linked-metadata-field>
-                    <externalsources>orcid</externalsources>
-                </relation-field>
-            </row>
-            <row>
-                <field>
-                    <dc-schema>dc</dc-schema>
-                    <dc-element>title</dc-element>
-                    <repeatable>false</repeatable>
-                    <label>Title</label>
-                    <input-type>onebox</input-type>
-                    <hint>Enter the main title of the item.</hint>
-                    <required>You must enter a main title for this item.</required>
-                </field>
-            </row>
-            <row>
-                <field>
-                    <dc-schema>dc</dc-schema>
-                    <dc-element>title</dc-element>
-                    <dc-qualifier>alternative</dc-qualifier>
-                    <language value-pairs-name="common_iso_languages">true</language>
-                    <repeatable>true</repeatable>
-                    <label>Other Titles</label>
-                    <input-type>onebox</input-type>
-                    <hint>If the item has any alternative titles, please enter them here.</hint>
-                </field>
-            </row>
-            <row>
-                <field>
-                    <dc-schema>dc</dc-schema>
-                    <dc-element>date</dc-element>
-                    <dc-qualifier>issued</dc-qualifier>
-                    <repeatable>false</repeatable>
-                    <label>Date of Issue</label>
-                    <style>col-sm-4</style>
-                    <input-type>date</input-type>
-                    <hint>Please give the date of previous publication or public distribution.
-                        You can leave out the day and/or month if they aren't applicable.
-                    </hint>
-                    <required>You must enter at least the year.</required>
-                </field>
+                    <row>
+                        <relation-field>
+                            <relationship-type>isAuthorOfDataset</relationship-type>
+                            <search-configuration>person</search-configuration>
+                            <repeatable>true</repeatable>
+                            <label>Author</label>
+                            <hint>Enter the author's name (Family name, Given names).</hint>
+                            <linked-metadata-field>
+                                <dc-schema>dc</dc-schema>
+                                <dc-element>contributor</dc-element>
+                                <dc-qualifier>author</dc-qualifier>
+                                <input-type>onebox</input-type>
+                            </linked-metadata-field>
+                            <externalsources>orcid</externalsources>
+                        </relation-field>
+                    </row>
+                    <row>
+                        <field>
+                            <dc-schema>dc</dc-schema>
+                            <dc-element>title</dc-element>
+                            <repeatable>false</repeatable>
+                            <label>Title</label>
+                            <input-type>onebox</input-type>
+                            <hint>Enter the main title of the item.</hint>
+                            <required>You must enter a main title for this item.</required>
+                        </field>
+                    </row>
+                    <row>
+                        <field>
+                            <dc-schema>dc</dc-schema>
+                            <dc-element>title</dc-element>
+                            <dc-qualifier>alternative</dc-qualifier>
+                            <language value-pairs-name="common_iso_languages">true</language>
+                            <repeatable>true</repeatable>
+                            <label>Other Titles</label>
+                            <input-type>onebox</input-type>
+                            <hint>If the item has any alternative titles, please enter them here.</hint>
+                        </field>
+                    </row>
+                    <row>
+                        <field>
+                            <dc-schema>dc</dc-schema>
+                            <dc-element>date</dc-element>
+                            <dc-qualifier>issued</dc-qualifier>
+                            <repeatable>false</repeatable>
+                            <label>Date of Issue</label>
+                            <style>col-sm-4</style>
+                            <input-type>date</input-type>
+                            <hint>Please give the date of previous publication or public distribution.
+                                You can leave out the day and/or month if they aren't applicable.
+                            </hint>
+                            <required>You must enter at least the year.</required>
+                        </field>
 
-                <field>
-                    <dc-schema>dc</dc-schema>
-                    <dc-element>publisher</dc-element>
-                    <repeatable>false</repeatable>
-                    <label>Publisher</label>
-                    <style>col-sm-8</style>
-                    <input-type>onebox</input-type>
-                    <hint>Enter the name of the publisher of the previously issued instance of this item.</hint>
-                </field>
-            </row>
-            <row>
-                <relation-field>
-                    <relationship-type>isPublicationOfDataset</relationship-type>
-                    <search-configuration>publication</search-configuration>
-                    <repeatable>true</repeatable>
-                    <label>Publications</label>
-                    <hint>Enter the publications referencing this dataset.</hint>
-                    <linked-metadata-field>
-                        <dc-schema>dc</dc-schema>
-                        <dc-element>relation</dc-element>
-                        <dc-qualifier>isreferencedby</dc-qualifier>
-                        <input-type>onebox</input-type>
-                    </linked-metadata-field>
-                    <externalsources>pubmed</externalsources>
-                </relation-field>
-            </row>
-            <row>
-                <field>
-                    <dc-schema>dc</dc-schema>
-                    <dc-element>type</dc-element>
-                    <repeatable>true</repeatable>
-                    <label>Type</label>
-                    <input-type value-pairs-name="common_types">dropdown</input-type>
-                    <hint>Select the type(s) of content of the item. To select more than one value in the list, you may
-                        have to hold down the "CTRL" or "Shift" key.
-                    </hint>
-                    <required>You must choose at least one type.</required>
-                </field>
-            </row>
-            <row>
-                <field>
-                    <dc-schema>dc</dc-schema>
-                    <dc-element>language</dc-element>
-                    <dc-qualifier>iso</dc-qualifier>
-                    <repeatable>false</repeatable>
-                    <label>Language</label>
-                    <input-type value-pairs-name="common_iso_languages">dropdown</input-type>
-                    <hint>Select the language of the main content of the dataset. If the language does not appear in the
-                        list, please select 'Other'. If the content does not really have a language (for example, if it
-                        is a dataset or an image) please select 'N/A'.
-                    </hint>
-                </field>
-            </row>
-        </form>
+                        <field>
+                            <dc-schema>dc</dc-schema>
+                            <dc-element>publisher</dc-element>
+                            <repeatable>false</repeatable>
+                            <label>Publisher</label>
+                            <style>col-sm-8</style>
+                            <input-type>onebox</input-type>
+                            <hint>Enter the name of the publisher of the previously issued instance of this item.</hint>
+                        </field>
+                    </row>
+                    <row>
+                        <relation-field>
+                            <relationship-type>isPublicationOfDataset</relationship-type>
+                            <search-configuration>publication</search-configuration>
+                            <repeatable>true</repeatable>
+                            <label>Publications</label>
+                            <hint>Enter the publications referencing this dataset.</hint>
+                            <linked-metadata-field>
+                                <dc-schema>dc</dc-schema>
+                                <dc-element>relation</dc-element>
+                                <dc-qualifier>isreferencedby</dc-qualifier>
+                                <input-type>onebox</input-type>
+                            </linked-metadata-field>
+                            <externalsources>pubmed</externalsources>
+                        </relation-field>
+                    </row>
+                    <row>
+                        <field>
+                            <dc-schema>dc</dc-schema>
+                            <dc-element>type</dc-element>
+                            <repeatable>true</repeatable>
+                            <label>Type</label>
+                            <input-type value-pairs-name="common_types">dropdown</input-type>
+                            <hint>Select the type(s) of content of the item. To select more than one value in the list, you may
+                                have to hold down the "CTRL" or "Shift" key.
+                            </hint>
+                            <required>You must choose at least one type.</required>
+                        </field>
+                    </row>
+                    <row>
+                        <field>
+                            <dc-schema>dc</dc-schema>
+                            <dc-element>language</dc-element>
+                            <dc-qualifier>iso</dc-qualifier>
+                            <repeatable>false</repeatable>
+                            <label>Language</label>
+                            <input-type value-pairs-name="common_iso_languages">dropdown</input-type>
+                            <hint>Select the language of the main content of the dataset. If the language does not appear in the
+                                list, please select 'Other'. If the content does not really have a language (for example, if it
+                                is a dataset or an image) please select 'N/A'.
+                            </hint>
+                        </field>
+                    </row>
+                </form>
 
         <!-- Openaire specific forms -->
 
@@ -1060,7 +1134,7 @@
                     <dc-qualifier>issued</dc-qualifier>
                     <repeatable>false</repeatable>
                     <label>Date of Issue</label>
-                    <style>col-md-4</style>
+                    <style>col-sm-4</style>
                     <input-type>date</input-type>
                     <hint>Please give the date of previous publication or public distribution.
                         You can leave out the day
@@ -1076,7 +1150,7 @@
                     <dc-qualifier></dc-qualifier>
                     <repeatable>false</repeatable>
                     <label>Publisher</label>
-                    <style>col-md-8</style>
+                    <style>col-sm-8</style>
                     <input-type>onebox</input-type>
                     <hint>Enter the name of the publisher of the previously issued instance of this item.</hint>
                     <required></required>
@@ -1322,6 +1396,29 @@
             <row>
                 <field>
                     <dc-schema>dc</dc-schema>
+                    <dc-element>rights</dc-element>
+                    <repeatable>false</repeatable>
+                    <label>Access Type</label>
+                    <input-type value-pairs-name="openaire_rights">dropdown</input-type>
+                    <hint>Select the access type of the resource.</hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>oaire</dc-schema>
+                    <dc-element>license</dc-element>
+                    <dc-qualifier>condition</dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>License</label>
+                    <input-type value-pairs-name="openaire_license_types">dropdown</input-type>
+                    <hint>Select the license of the resource.</hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
                     <dc-element>coverage</dc-element>
                     <dc-qualifier></dc-qualifier>
                     <repeatable>false</repeatable>
@@ -1524,6 +1621,7 @@
                 </field>
             </row>
         </form>
+
     </form-definitions>
 
 
@@ -1547,117 +1645,789 @@
                 <stored-value>issn</stored-value>
             </pair>
             <pair>
-                <displayed-value>Other</displayed-value>
-                <stored-value>other</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>ISMN</displayed-value>
-                <stored-value>ismn</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>Gov't Doc #</displayed-value>
-                <stored-value>govdoc</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>URI</displayed-value>
-                <stored-value>uri</stored-value>
-            </pair>
-            <pair>
                 <displayed-value>ISBN</displayed-value>
                 <stored-value>isbn</stored-value>
             </pair>
-        </value-pairs>
-
-        <value-pairs value-pairs-name="common_types" dc-term="type">
             <pair>
-                <displayed-value>Animation</displayed-value>
-                <stored-value>Animation</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>Article</displayed-value>
-                <stored-value>Article</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>Book</displayed-value>
-                <stored-value>Book</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>Book chapter</displayed-value>
-                <stored-value>Book chapter</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>Dataset</displayed-value>
-                <stored-value>Dataset</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>Learning Object</displayed-value>
-                <stored-value>Learning Object</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>Image</displayed-value>
-                <stored-value>Image</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>Image, 3-D</displayed-value>
-                <stored-value>Image, 3-D</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>Map</displayed-value>
-                <stored-value>Map</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>Musical Score</displayed-value>
-                <stored-value>Musical Score</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>Plan or blueprint</displayed-value>
-                <stored-value>Plan or blueprint</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>Preprint</displayed-value>
-                <stored-value>Preprint</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>Presentation</displayed-value>
-                <stored-value>Presentation</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>Recording, acoustical</displayed-value>
-                <stored-value>Recording, acoustical</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>Recording, musical</displayed-value>
-                <stored-value>Recording, musical</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>Recording, oral</displayed-value>
-                <stored-value>Recording, oral</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>Software</displayed-value>
-                <stored-value>Software</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>Technical Report</displayed-value>
-                <stored-value>Technical Report</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>Thesis</displayed-value>
-                <stored-value>Thesis</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>Video</displayed-value>
-                <stored-value>Video</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>Working Paper</displayed-value>
-                <stored-value>Working Paper</stored-value>
+                <displayed-value>DOI</displayed-value>
+                <stored-value>doi</stored-value>
             </pair>
             <pair>
                 <displayed-value>Other</displayed-value>
-                <stored-value>Other</stored-value>
+                <stored-value>other</stored-value>
             </pair>
         </value-pairs>
+
+<value-pairs value-pairs-name="common_types" dc-term="type">
+    <pair>
+        <displayed-value>Animation</displayed-value>
+        <stored-value>Animation</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Article</displayed-value>
+        <stored-value>Article</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Bachelor's thesis</displayed-value>
+        <stored-value>Bachelous paper</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Book</displayed-value>
+        <stored-value>Book</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Book chapter</displayed-value>
+        <stored-value>Book chapter</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Booklet</displayed-value>
+        <stored-value>Booklet</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Brochure</displayed-value>
+        <stored-value>Brochure</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Collection of assignments</displayed-value>
+        <stored-value>Collection of assignments</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Competitive scientific work</displayed-value>
+        <stored-value>Competitive_scientific_work</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Dataset</displayed-value>
+        <stored-value>Dataset</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Image</displayed-value>
+        <stored-value>Image</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Image, 3-D</displayed-value>
+        <stored-value>Image, 3-D</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Learning Object</displayed-value>
+        <stored-value>Learning Object</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Lists</displayed-value>
+        <stored-value>Lists</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Magazine</displayed-value>
+        <stored-value>Magazine</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Map</displayed-value>
+        <stored-value>Map</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Master's thesis</displayed-value>
+        <stored-value>Masters thesis</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Monograph</displayed-value>
+        <stored-value>Monograph</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Multimedia</displayed-value>
+        <stored-value>Multimedia</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Musical Score</displayed-value>
+        <stored-value>Musical Score</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Newspaper</displayed-value>
+        <stored-value>Newspaper</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Patent</displayed-value>
+        <stored-value>Patent</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Plan or blueprint</displayed-value>
+        <stored-value>Plan or blueprint</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Preprint</displayed-value>
+        <stored-value>Preprint</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Presentation</displayed-value>
+        <stored-value>Presentation</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Recording, acoustical</displayed-value>
+        <stored-value>Recording, acoustical</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Review</displayed-value>
+        <stored-value>Review</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Schoolbook</displayed-value>
+        <stored-value>Schoolbook</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Software</displayed-value>
+        <stored-value>Software</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Synopsis</displayed-value>
+        <stored-value>Synopsis</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Technical Report</displayed-value>
+        <stored-value>Technical Report</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Textbook</displayed-value>
+        <stored-value>Textbook</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Thesis</displayed-value>
+        <stored-value>Thesis</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Theses</displayed-value>
+        <stored-value>Theses</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Video</displayed-value>
+        <stored-value>Video</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Working Paper</displayed-value>
+        <stored-value>Working Paper</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>author's certificate</displayed-value>
+        <stored-value>authors certificate</stored-value>
+    </pair>
+        <pair>
+        <displayed-value>Instruction</displayed-value>
+        <stored-value>Instruction</stored-value>
+    </pair>
+    <pair>
+        <displayed-value>Other</displayed-value>
+        <stored-value>Other</stored-value>
+    </pair>
+</value-pairs>
+
+
+        <!-- Specialities -->
+        <value-pairs value-pairs-name="specializations" dc-term="specialization">
+            <pair>
+    <displayed-value>071 - Облік і оподаткування</displayed-value>
+    <stored-value>071 - Облік і оподаткування</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.030509 - Облік і аудит</displayed-value>
+    <stored-value>6.030509 - Облік і аудит</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>056 - Міжнародні економічні відноси</displayed-value>
+    <stored-value>056 - Міжнародні економічні відноси</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.030503 - Міжнародна економіка</displayed-value>
+    <stored-value>6.030503 - Міжнародна економіка</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>072 - Фінанси, банківська справа та страхування</displayed-value>
+    <stored-value>072 - Фінанси, банківська справа та страхування</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.030508 - Фінанси і кредит</displayed-value>
+    <stored-value>6.030508 - Фінанси і кредит</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>051 - Економіка</displayed-value>
+    <stored-value>051 - Економіка</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.030502 - Економічна кібернетика</displayed-value>
+    <stored-value>6.030502 - Економічна кібернетика</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>081 - Право</displayed-value>
+    <stored-value>081 - Право</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.03040 - Правознавство</displayed-value>
+    <stored-value>6.03040 - Правознавство</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>073 - Менеджмент</displayed-value>
+    <stored-value>073 - Менеджмент</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>081 - Право</displayed-value>
+    <stored-value>081 - Право</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>051 - Економіка</displayed-value>
+    <stored-value>051 - Економіка</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>073 - Менеджмент</displayed-value>
+    <stored-value>073 - Менеджмент</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>076 - Підприємництво, торгівля та біржова діяльність</displayed-value>
+    <stored-value>076 - Підприємництво, торгівля та біржова діяльність</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.030504 - Економіка підприємства</displayed-value>
+    <stored-value>6.030504 - Економіка підприємства</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>056 - Міжнародні економічні відносини</displayed-value>
+    <stored-value>056 - Міжнародні економічні відносини</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>292 - Міжнародні економічні відносини</displayed-value>
+    <stored-value>292 - Міжнародні економічні відносини</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.030503 - Міжнародна економіка</displayed-value>
+    <stored-value>6.030503 - Міжнародна економіка</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>075 - Маркетинг</displayed-value>
+    <stored-value>075 - Маркетинг</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>073 - Менеджмент</displayed-value>
+    <stored-value>073 - Менеджмент</stored-value>
+</pair>
+
+
+
+<pair>
+    <displayed-value>6.030507 - Маркетинг</displayed-value>
+    <stored-value>6.030507 - Маркетинг</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>073 - Менеджмент</displayed-value>
+    <stored-value>073 - Менеджмент</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>074 - Публічне управління та адміністрування</displayed-value>
+    <stored-value>074 - Публічне управління та адміністрування</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>281 - Публічне управління та адміністрування</displayed-value>
+    <stored-value>281 - Публічне управління та адміністрування</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.030601 - Менеджмент</displayed-value>
+    <stored-value>6.030601 - Менеджмент</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>072 - Фінанси, банківська справа та страхування</displayed-value>
+    <stored-value>072 - Фінанси, банківська справа та страхування</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.030508 - Фінанси і кредит</displayed-value>
+    <stored-value>6.030508 - Фінанси і кредит</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>141 - Електроенергетика, електротехніка та електромеханіка</displayed-value>
+    <stored-value>141 - Електроенергетика, електротехніка та електромеханіка</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.050701 - Електротехніка та електротехнології</displayed-value>
+    <stored-value>6.050701 - Електротехніка та електротехнології</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>171 - Електроніка</displayed-value>
+    <stored-value>171 - Електроніка</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>172 - Телекомунікації та радіотехніка</displayed-value>
+    <stored-value>172 - Телекомунікації та радіотехніка</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.050802 - Електронні пристрої та системи</displayed-value>
+    <stored-value>6.050802 - Електронні пристрої та системи</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.050803 - Телекомунікації</displayed-value>
+    <stored-value>6.050803 - Телекомунікації</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>122 - Комп’ютерні науки та інформаційні технології</displayed-value>
+    <stored-value>122 - Комп’ютерні науки та інформаційні технології</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>125 - Кібербезпека</displayed-value>
+    <stored-value>125 - Кібербезпека</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>122 - Комп’ютерні науки</displayed-value>
+    <stored-value>122 - Комп’ютерні науки</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.040302 - Інформатика</displayed-value>
+    <stored-value>6.040302 - Інформатика</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.050101 - Комп’ютерні науки</displayed-value>
+    <stored-value>6.050101 - Комп’ютерні науки</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.0500201 - Системна інженерія</displayed-value>
+    <stored-value>6.0500201 - Системна інженерія</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>127 - Прикладна математика</displayed-value>
+    <stored-value>127 - Прикладна математика</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.040301 - Прикладна математика</displayed-value>
+    <stored-value>6.040301 - Прикладна математика</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>153 - Мікро- та наносистемна техніка</displayed-value>
+    <stored-value>153 - Мікро- та наносистемна техніка</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>163 - Біомедична інженерія</displayed-value>
+    <stored-value>163 - Біомедична інженерія</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.050801 - Мікро- та наноелектроніка</displayed-value>
+    <stored-value>6.050801 - Мікро- та наноелектроніка</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.020303 - Філологія</displayed-value>
+    <stored-value>6.020303 - Філологія</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>035 - Філологія</displayed-value>
+    <stored-value>035 - Філологія</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>061 - Журналістика</displayed-value>
+    <stored-value>061 - Журналістика</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.030301 - Журналістика</displayed-value>
+    <stored-value>6.030301 - Журналістика</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.030302 - Реклама і зв’язки з громадськістю</displayed-value>
+    <stored-value>6.030302 - Реклама і зв’язки з громадськістю</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>113 - Прикладна математика</displayed-value>
+    <stored-value>113 - Прикладна математика</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>131 - Прикладна механіка</displayed-value>
+    <stored-value>131 - Прикладна механіка</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.040202 - Механіка</displayed-value>
+    <stored-value>6.040202 - Механіка</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>132 - Матеріалознавство</displayed-value>
+    <stored-value>132 - Матеріалознавство</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.050403 - Інженерне матеріалознавство</displayed-value>
+    <stored-value>6.050403 - Інженерне матеріалознавство</stored-value>
+</pair>
+
+
+<pair>
+    <displayed-value>144 - Теплоенергетика</displayed-value>
+    <stored-value>144 - Теплоенергетика</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.050502 - Інженерна механіка</displayed-value>
+    <stored-value>6.050502 - Інженерна механіка</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.050601 - Теплоенергетика</displayed-value>
+    <stored-value>6.050601 - Теплоенергетика</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>101 - Екологія</displayed-value>
+    <stored-value>101 - Екологія</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>183 - Технології захисту навколишнього середовища</displayed-value>
+    <stored-value>183 - Технології захисту навколишнього середовища</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.040106 - Екологія, охорона навколишнього середовища та збалансоване природокористування</displayed-value>
+    <stored-value>6.040106 - Екологія, охорона навколишнього середовища та збалансоване природокористування</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>133 - Галузеве машинобудування</displayed-value>
+    <stored-value>133 - Галузеве машинобудування</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.050503 - Машинобудування</displayed-value>
+    <stored-value>6.050503 - Машинобудування</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>142 - Енергетичне машинобудування</displayed-value>
+    <stored-value>142 - Енергетичне машинобудування</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.050604 - Енергомашинобудування</displayed-value>
+    <stored-value>6.050604 - Енергомашинобудування</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>133 - Галузеве машинобудування</displayed-value>
+    <stored-value>133 - Галузеве машинобудування</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>152 - Метрологія та інформаційно-вимірювальна техніка</displayed-value>
+    <stored-value>152 - Метрологія та інформаційно-вимірювальна техніка</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.050502 - Інженерна механіка</displayed-value>
+    <stored-value>6.050502 - Інженерна механіка</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.050503 - Машинобудування</displayed-value>
+    <stored-value>6.050503 - Машинобудування</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>072 - Фінанси, банківська справа та страхування</displayed-value>
+    <stored-value>072 - Фінанси, банківська справа та страхування</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>073 - Менеджмент</displayed-value>
+    <stored-value>073 - Менеджмент</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.030504 - Економіка підприємства</displayed-value>
+    <stored-value>6.030504 - Економіка підприємства</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.030508 - Фінанси і кредит</displayed-value>
+    <stored-value>6.030508 - Фінанси і кредит</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.030601 - Менеджмент</displayed-value>
+    <stored-value>6.030601 - Менеджмент</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>171 - Електроніка</displayed-value>
+    <stored-value>171 - Електроніка</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.050802 - Електронні пристрої та системи</displayed-value>
+    <stored-value>6.050802 - Електронні пристрої та системи</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>151 - Автоматизація та комп’ютерно-інтегровані технології</displayed-value>
+    <stored-value>151 - Автоматизація та комп’ютерно-інтегровані технології</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.050201 - Автоматизація та комп’ютерно-інтегровані технології</displayed-value>
+    <stored-value>6.050201 - Автоматизація та комп’ютерно-інтегровані технології</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>228 - Педіатрія</displayed-value>
+    <stored-value>228 - Педіатрія</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>227 - Фізична реабілітація</displayed-value>
+    <stored-value>227 - Фізична реабілітація</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.010203 - Здоров’я людини</displayed-value>
+    <stored-value>6.010203 - Здоров’я людини</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>227 - Фізична терапія, ерготерапія</displayed-value>
+    <stored-value>227 - Фізична терапія, ерготерапія</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>227 - Терапія та реабілітація</displayed-value>
+    <stored-value>227 - Терапія та реабілітація</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>017 - Фізична культура і спорт</displayed-value>
+    <stored-value>017 - Фізична культура і спорт</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.010202 - Спорт</displayed-value>
+    <stored-value>6.010202 - Спорт</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>229 - Громадське здоров’я</displayed-value>
+    <stored-value>229 - Громадське здоров’я</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>7.12010003 - Медико-профілактична справа</displayed-value>
+    <stored-value>7.12010003 - Медико-профілактична справа</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>221 - Стоматологія</displayed-value>
+    <stored-value>221 - Стоматологія</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>7.12010005 - Стоматологія</displayed-value>
+    <stored-value>7.12010005 - Стоматологія</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>028 - Менеджмент соціокультурної діяльності</displayed-value>
+    <stored-value>028 - Менеджмент соціокультурної діяльності</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>053 - Психологія</displayed-value>
+    <stored-value>053 - Психологія</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>231 - Соціальна робота</displayed-value>
+    <stored-value>231 - Соціальна робота</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>6.130102 - Соціальна робота</displayed-value>
+    <stored-value>6.130102 - Соціальна робота</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>081 - Право</displayed-value>
+    <stored-value>081 - Право</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>113 - Прикладна математика</displayed-value>
+    <stored-value>113 - Прикладна математика</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>052 - Політологія</displayed-value>
+    <stored-value>052 - Політологія</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>32 - Історія та археологія</displayed-value>
+    <stored-value>32 - Історія та археологія</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>242 - Туризм і рекреація</displayed-value>
+    <stored-value>242 - Туризм і рекреація</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>121 - Інженерія програмного забезпечення</displayed-value>
+    <stored-value>121 - Інженерія програмного забезпечення</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>293 - Міжнародне право</displayed-value>
+    <stored-value>293 - Міжнародне право</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>223 - Медсестринство</displayed-value>
+    <stored-value>223 - Медсестринство</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>171 - Електроніка</displayed-value>
+    <stored-value>171 - Електроніка</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>125 - Кібербезпека та захист інформації</displayed-value>
+    <stored-value>125 - Кібербезпека та захист інформації</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>174 - Автоматизація, комп’ютерно-інтегровані технології та робототехніка</displayed-value>
+    <stored-value>174 - Автоматизація, комп’ютерно-інтегровані технології та робототехніка</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>176 - Мікро- та наносистемна техніка</displayed-value>
+    <stored-value>176 - Мікро- та наносистемна техніка</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>122 - Комп’ютерні науки</displayed-value>
+    <stored-value>122 - Комп’ютерні науки</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>102 - Хімія</displayed-value>
+    <stored-value>102 - Хімія</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>51 - Економіка</displayed-value>
+    <stored-value>51 - Економіка</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>133 - Галузеве машинобудування</displayed-value>
+    <stored-value>133 - Галузеве машинобудування</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>161 - Хімічні технології та інженерія</displayed-value>
+    <stored-value>161 - Хімічні технології та інженерія</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>76 - Підприємництво та торгівля</displayed-value>
+    <stored-value>76 - Підприємництво та торгівля</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>262 - Правоохоронна діяльність</displayed-value>
+    <stored-value>262 - Правоохоронна діяльність</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>014 - Середня освіта</displayed-value>
+    <stored-value>014 - Середня освіта</stored-value>
+</pair>
+
+<pair>
+    <displayed-value>А7 - Фізична культура і спорт</displayed-value>
+    <stored-value>А7 - Фізична культура і спорт</stored-value>
+</pair>
+
+        <pair>
+            <displayed-value>072 - Фінанси, банківська справа та страхування</displayed-value>
+            <stored-value>072 - Фінанси, банківська справа та страхування</stored-value>
+        </pair>
+        <pair>
+            <displayed-value>072 - Фінанси, банківська справа, страхування та фондовий ринок</displayed-value>
+            <stored-value>072 - Фінанси, банківська справа, страхування та фондовий ринок</stored-value>
+        </pair>
+        <pair>
+            <displayed-value>D2 - Фінанси, банківська справа, страхування та фондовий ринок</displayed-value>
+            <stored-value>D2 - Фінанси, банківська справа, страхування та фондовий ринок</stored-value>
+        </pair>
+        <pair>
+            <displayed-value>076 - Підприємництво та торгівля</displayed-value>
+            <stored-value>076 - Підприємництво та торгівля</stored-value>
+        </pair>
+        <pair>
+            <displayed-value>G5 - Електроніка</displayed-value>
+            <stored-value>G5 - Електроніка</stored-value>
+        </pair>
+        <pair>
+            <displayed-value>242 - Туризм</displayed-value>
+            <stored-value>242 - Туризм</stored-value>
+        </pair>
+        <pair>
+            <displayed-value>151 - Автоматизація, комп’ютерно-інтегровані технології та робототехніка</displayed-value>
+            <stored-value>151 - Автоматизація, комп’ютерно-інтегровані технології та робототехніка</stored-value>
+        </pair>
+        <pair>
+            <displayed-value>174 - Автоматизація та комп’ютерно-інтегровані технології</displayed-value>
+            <stored-value>174 - Автоматизація та комп’ютерно-інтегровані технології</stored-value>
+        </pair>
+
+        </value-pairs>
+
 
         <!-- default language order: (from dspace 1.2.1)
              "en_US", "en", "es", "de", "fr", "it", "ja", "zh", "other", ""
@@ -1670,6 +2440,10 @@
             <pair>
                 <displayed-value>English (United States)</displayed-value>
                 <stored-value>en_US</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Ukrainian</displayed-value>
+                <stored-value>ua</stored-value>
             </pair>
             <pair>
                 <displayed-value>English</displayed-value>
@@ -1710,6 +2484,55 @@
             <pair>
                 <displayed-value>(Other)</displayed-value>
                 <stored-value>other</stored-value>
+            </pair>
+        </value-pairs>
+
+        <!--License list from dspace 6 -->
+
+        <value-pairs value-pairs-name="rights_links_localization" dc-term="rights_links_localization">
+            <pair>
+                <displayed-value>Copyright not evaluated</displayed-value>
+                <stored-value>cne</stored-value>
+            </pair>
+        <!--     <pair>-->
+        <!--       <displayed-value>&lt;a href="http://rightsstatements.org/vocab/NKC/1.0/"&gt;No known copyright&lt;/a&gt;</displayed-value>-->
+        <!--       <stored-value>nkc</stored-value>-->
+        <!--     </pair>-->
+        <!--     <pair>-->
+        <!--       <displayed-value>&lt;a href="https://rightsstatements.org/page/UND/1.0/?language=en"&gt;Сopyright undetermined&lt;/a&gt;</displayed-value>-->
+        <!--       <stored-value>cu</stored-value>-->
+        <!--     </pair>-->
+            <pair>
+            <displayed-value>Creative Commons Attribution 4.0 International License</displayed-value>
+            <stored-value>CC BY 4.0</stored-value>
+            </pair>
+            <pair>
+            <displayed-value>Creative Creative Commons Attribution-ShareAlike 4.0 International</displayed-value>
+            <stored-value>CC BY-SA 4.0</stored-value>
+            </pair>
+            <pair>
+            <displayed-value>Creative Commons Attribution - NoDerivatives 4.0 International</displayed-value>
+            <stored-value>CC BY-ND 4.0</stored-value>
+            </pair>
+            <pair>
+            <displayed-value>Creative Commons Attribution - NonCommercial 4.0 International</displayed-value>
+            <stored-value>CC BY-NC 4.0</stored-value>
+            </pair>
+            <pair>
+            <displayed-value>Creative Commons Attribution - NonCommercial - ShareAlike 4.0 International</displayed-value>
+            <stored-value>CC BY-NC-SA 4.0</stored-value>
+            </pair>
+            <pair>
+            <displayed-value>Creative Commons Attribution - NonCommercial - NoDerivatives 4.0 International</displayed-value>
+            <stored-value>CC BY-NC-ND 4.0</stored-value>
+            </pair>
+            <pair>
+            <displayed-value>Creative Commons Public Domain Dedication</displayed-value>
+            <stored-value>CC0 1.0</stored-value>
+            </pair>
+            <pair>
+            <displayed-value>In Copyright</displayed-value>
+            <stored-value>inc10</stored-value>
             </pair>
         </value-pairs>
 
@@ -1755,8 +2578,8 @@
 
         </value-pairs>
 
-        <!-- OpenAIRE document types
-             https://openaire-guidelines-for-literature-repository-managers.readthedocs.io/en/4.0.1/field_publicationtype.html
+        <!-- Openaire document types
+             https://openaire-guidelines-for-literature-repository-managers.readthedocs.io/en/v4.0.0/field_publicationtype.html
              Based on COAR Vocabularies -> Controlled Vocabulary for Resource Type Genres (Version 2.0):
              http://vocabularies.coar-repositories.org/documentation/resource_types/
         -->
@@ -2162,24 +2985,116 @@
             </pair>
         </value-pairs>
 
-        <value-pairs value-pairs-name="audio_video_media_type" dc-term="type">
+        <value-pairs value-pairs-name="educational_program" dc-term="educational_program">
             <pair>
-                <displayed-value>Audio</displayed-value>
-                <stored-value>audio</stored-value>
+                <displayed-value>Невизначено</displayed-value>
+                <stored-value></stored-value>
             </pair>
             <pair>
-                <displayed-value>Video</displayed-value>
-                <stored-value>video</stored-value>
+                <displayed-value>ОПП Інтелектуальний аналіз даних та математичне моделювання</displayed-value>
+                <stored-value>ОПП Інтелектуальний аналіз даних та математичне моделювання</stored-value>
             </pair>
             <pair>
-                <displayed-value>Audio and Video</displayed-value>
-                <stored-value>audio+video</stored-value>
+                <displayed-value>ОПП Інформатика</displayed-value>
+                <stored-value>ОПП Інформатика</stored-value>
             </pair>
             <pair>
-                <displayed-value>Neither</displayed-value>
-                <stored-value>neither</stored-value>
+                <displayed-value>ОПП Цифрові технології проєктування</displayed-value>
+                <stored-value>ОПП Цифрові технології проєктування</stored-value>
             </pair>
+            <pair>
+                <displayed-value>ОПП Кібербезпека</displayed-value>
+                <stored-value>ОПП Кібербезпека</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>ОПП Комп’ютерна інженерія</displayed-value>
+                <stored-value>ОПП Комп’ютерна інженерія</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>ОПП Електротехнічні системи електроспоживання</displayed-value>
+                <stored-value>ОПП Електротехнічні системи електроспоживання</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>ОПП Електронні прилади і сенсорні системи</displayed-value>
+                <stored-value>ОПП Електронні прилади і сенсорні системи</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>ОПП Електронні системи та компоненти</displayed-value>
+                <stored-value>ОПП Електронні системи та компоненти</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>ОПП Мережеві та інтернет-технології</displayed-value>
+                <stored-value>ОПП Мережеві та інтернет-технології</stored-value>
+            </pair>
+	    <pair>
+                <displayed-value>ОПП Комп'ютеризовані системи управління та робототехніка</displayed-value>
+                <stored-value>ОПП Комп'ютеризовані системи управління та робототехніка</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>ОПП Біомедична інженерія та роботизовані комплекси</displayed-value>
+                <stored-value>ОПП Біомедична інженерія та роботизовані комплекси</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>ОПП Електронні системи</displayed-value>
+                <stored-value>ОПП Електронні системи</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>ОПП Нанотехнології та біомедичні системи</displayed-value>
+                <stored-value>ОПП Нанотехнології та біомедичні системи</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>ОНП Інформатика</displayed-value>
+                <stored-value>ОНП Інформатика</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>ОНП Цифрові технології проєктування</displayed-value>
+                <stored-value>ОНП Цифрові технології проєктування</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>ОНП Сенсорна електроніка та лазерні технології</displayed-value>
+                <stored-value>ОНП Сенсорна електроніка та лазерні технології</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>ОПП Інформаційні технології проєктування</displayed-value>
+                <stored-value>ОПП Інформаційні технології проєктування</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>ОПП Фінанси</displayed-value>
+                <stored-value>ОПП Фінанси</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>ОПП Банківська справа</displayed-value>
+                <stored-value>ОПП Банківська справа</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>ОПП Електронний бізнес</displayed-value>
+                <stored-value>ОПП Електронний бізнес</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>ОПП Електронні прилади і сенсорні системи</displayed-value>
+                <stored-value>ОПП Електронні прилади і сенсорні системи</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>ОПП Економіка і бізнес</displayed-value>
+                <stored-value>ОПП Економіка і бізнес</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>ОПП Наука про дані та моделювання складних систем</displayed-value>
+                <stored-value>ОПП Наука про дані та моделювання складних систем</stored-value>
+            </pair>
+
         </value-pairs>
+
+        <value-pairs value-pairs-name="educational_resources" dc-term="educational_resources">
+            <pair>
+                <displayed-value>N/A</displayed-value>
+                <stored-value></stored-value>
+            </pair>
+            <pair>
+                <displayed-value>СумДУ</displayed-value>
+                <stored-value>СумДУ</stored-value>
+            </pair>
+         </value-pairs>
 
     </form-value-pairs>
 
