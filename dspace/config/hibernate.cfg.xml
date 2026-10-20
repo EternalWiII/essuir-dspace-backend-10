@@ -88,6 +88,10 @@
 
         <mapping class="org.dspace.app.requestitem.RequestItem"/>
 
+        <!-- Custom entities from 6x -->
+        <mapping class="org.dspace.content.Chair"/>
+        <mapping class="org.dspace.content.Faculty"/>
+
         <!--Configurable workflow services -->
         <mapping class="org.dspace.xmlworkflow.storedcomponents.ClaimedTask"/>
         <mapping class="org.dspace.xmlworkflow.storedcomponents.CollectionRole"/>
@@ -97,7 +101,7 @@
         <mapping class="org.dspace.xmlworkflow.storedcomponents.XmlWorkflowItem"/>
 
         <mapping class="org.dspace.statistics.export.OpenURLTracker"/>
-        
+
         <mapping class="org.dspace.orcid.OrcidQueue" />
         <mapping class="org.dspace.orcid.OrcidHistory" />
         <mapping class="org.dspace.orcid.OrcidToken"/>
